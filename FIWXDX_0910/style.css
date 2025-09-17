@@ -1,0 +1,29 @@
+body{
+    background: linear-gradient(to right, #580CED, #007CD1);
+}
+
+h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#box1{
+    width: 35%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #007CD1, #580CED);
+}
+
+#box2{
+    width: 35%;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #007CD1, #580CED);
+}
