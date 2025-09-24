@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<orarend>
+    <ora id="egy" tipus="eloadas">
+        <targy>Számítógép hálózatok</targy>
+        <idopont>
+            <nap>hétfő</nap>
+            <tol>8</tol>
+            <ig>10</ig>
+        </idopont>
+        <helyszin>I A2 fsz.</helyszin>
+        <oktato>Dr. Kovács Szilveszter</oktato>
+        <szak>Üzemmérnöki-informatikus BSc</szak>
+    </ora>
+    <ora id="ketto" tipus="eloadas">
+        <targy>Web technológiák 1.</targy>
+        <idopont>
+            <nap>hétfő</nap>
+            <tol>10</tol>
+            <ig>12</ig>
+        </idopont>
+        <helyszin>V A1 magasfsz3-4</helyszin>
+        <oktato>Agárdi Anita</oktato>
+        <szak>Üzemmérnöki-informatikus BSc</szak>
+    </ora>
+    <ora id="harom" tipus="eloadas">
+        <targy>Adatbázisrendszerek I.</targy>
+        <idopont>
+            <nap>kedd</nap>
+            <tol>8</tol>
+            <ig>10</ig>
+        </idopont>
+        <helyszin>I A2 fsz.</helyszin>
+        <oktato>Dr. Kovács László József</oktato>
+        <szak>Üzemmérnöki-informatikus BSc</szak>
+    </ora>
+    <ora id="negy" tipus="gyakorlat">
+        <targy>Adatbázisrendszerek I.gy</targy>
+        <idopont>
+            <nap>kedd</nap>
+            <tol>10</tol>
+            <ig>13</ig>
+        </idopont>
+        <helyszin>Inf. 202</helyszin>
+        <oktato>Szűcs Miklós</oktato>
+        <szak>Üzemmérnöki-informatikus BSc</szak>
+    </ora>
+    <ora id="ot" tipus="eloadas">
+        <targy>Szoftvertechnológia</targy>
+        <idopont>
+            <nap>szerda</nap>
+            <tol>8</tol>
+            <ig>10</ig>
+        </idopont>
+        <helyszin>III A4 fsz.</helyszin>
+        <oktato>Dr. Mileff Péter</oktato>
+        <szak>Üzemmérnöki-informatikus BSc</szak>
+    </ora>
+    <ora id="hat" tipus="gyakorlat">
+        <targy>Szoftvertechnológia gy.</targy>
+        <idopont>
+            <nap>szerda</nap>
+            <tol>10</tol>
+            <ig>12</ig>
+        </idopont>
+        <helyszin>III A4 fsz.</helyszin>
+        <oktato>Jlidli Ali</oktato>
+        <szak>Üzemmérnöki-informatikus BSc</szak>
+    </ora>
+    <ora id="het" tipus="gyakorlat">
+        <targy>Webtechnológiák 1. gy.</targy>
+        <idopont>
+            <nap>szerda</nap>
+            <tol>12</tol>
+            <ig>14</ig>
+        </idopont>
+        <helyszin>Inf. 101</helyszin>
+        <oktato>Dr. Bednarik László</oktato>
+        <szak>Üzemmérnöki-informatikus BSc</szak>
+    </ora>
+    <ora id="nyolc" tipus="gyakorlat">
+        <targy>Webtechnológiák I. gyakor</targy>
+        <idopont>
+            <nap>szerda</nap>
+            <tol>14</tol>
+            <ig>16</ig>
+        </idopont>
+        <helyszin>Inf. 102</helyszin>
+        <oktato>Dr. Bednarik László</oktato>
+        <szak>Üzemmérnöki-informatikus BSc</szak>
+    </ora>
+    <ora id="kilenc" tipus="gyakorlat">
+        <targy>Adatbázisrendszerek I. R</targy>
+        <idopont>
+            <nap>szerda</nap>
+            <tol>16</tol>
+            <ig>18</ig>
+        </idopont>
+        <helyszin>Inf. 101</helyszin>
+        <oktato>Mészáros Gergő</oktato>
+        <szak>Üzemmérnöki-informatikus BSc</szak>
+    </ora>
+    <ora id="tiz" tipus="gyakorlat">
+        <targy>Számítógép hálózatok gy.</targy>
+        <idopont>
+            <nap>csütörtök</nap>
+            <tol>10</tol>
+            <ig>12</ig>
+        </idopont>
+        <helyszin>I A2 fsz.</helyszin>
+        <oktato>Dr. Kovács Szilveszter</oktato>
+        <szak>Üzemmérnöki-informatikus BSc</szak>
+    </ora>
+</orarend>
