@@ -1,0 +1,116 @@
+{
+	"FIWXDX_orarend": {
+		"ora": [
+			{
+				"targy": "Számítógép hálózatok",
+				"idopont": {
+					"nap": "hétfő",
+					"tol": "8",
+					"ig": "10"
+				},
+				"helyszin": "I A2 fsz.",
+				"oktato": "Dr. Kovács Szilveszter",
+				"szak": "Üzemmérnöki-informatikus BSc"
+			},
+			{
+				"targy": "Web technológiák 1.",
+				"idopont": {
+					"nap": "hétfő",
+					"tol": "10",
+					"ig": "12"
+				},
+				"helyszin": "V A1 magasfsz3-4",
+				"oktato": "Agárdi Anita",
+				"szak": "Üzemmérnöki-informatikus BSc"
+			},
+			{
+				"targy": "Adatbázisrendszerek I.",
+				"idopont": {
+					"nap": "kedd",
+					"tol": "8",
+					"ig": "10"
+				},
+				"helyszin": "I A2 fsz.",
+				"oktato": "Dr. Kovács László József",
+				"szak": "Üzemmérnöki-informatikus BSc"
+			},
+			{
+				"targy": "Adatbázisrendszerek I.gy",
+				"idopont": {
+					"nap": "kedd",
+					"tol": "10",
+					"ig": "13"
+				},
+				"helyszin": "Inf. 202",
+				"oktato": "Szűcs Miklós",
+				"szak": "Üzemmérnöki-informatikus BSc"
+			},
+			{
+				"targy": "Szoftvertechnológia",
+				"idopont": {
+					"nap": "szerda",
+					"tol": "8",
+					"ig": "10"
+				},
+				"helyszin": "III A4 fsz.",
+				"oktato": "Dr. Mileff Péter",
+				"szak": "Üzemmérnöki-informatikus BSc"
+			},
+			{
+				"targy": "Szoftvertechnológia gy.",
+				"idopont": {
+					"nap": "szerda",
+					"tol": "10",
+					"ig": "12"
+				},
+				"helyszin": "III A4 fsz.",
+				"oktato": "Jlidli Ali",
+				"szak": "Üzemmérnöki-informatikus BSc"
+			},
+			{
+				"targy": "Webtechnológiák 1. gy.",
+				"idopont": {
+					"nap": "szerda",
+					"tol": "12",
+					"ig": "14"
+				},
+				"helyszin": "Inf. 101",
+				"oktato": "Dr. Bednarik László",
+				"szak": "Üzemmérnöki-informatikus BSc"
+			},
+			{
+				"targy": "Webtechnológiák I. gyakor",
+				"idopont": {
+					"nap": "szerda",
+					"tol": "14",
+					"ig": "16"
+				},
+				"helyszin": "Inf. 102",
+				"oktato": "Dr. Bednarik László",
+				"szak": "Üzemmérnöki-informatikus BSc"
+			},
+			{
+				"targy": "Adatbázisrendszerek I. R",
+				"idopont": {
+					"nap": "szerda",
+					"tol": "16",
+					"ig": "18"
+				},
+				"helyszin": "Inf. 101",
+				"oktato": "Mészáros Gergő",
+				"szak": "Üzemmérnöki-informatikus BSc"
+			},
+			{
+				"targy": "Számítógép hálózatok gy.",
+				"idopont": {
+					"nap": "csütörtök",
+					"tol": "10",
+					"ig": "12"
+				},
+				"helyszin": "I A2 fsz.",
+				"oktato": "Dr. Kovács Szilveszter",
+				"szak": "Üzemmérnöki-informatikus BSc"
+			}
+		]
+	}
+}
