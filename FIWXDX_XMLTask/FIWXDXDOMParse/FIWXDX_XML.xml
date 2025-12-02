@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<darts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FIWXDX_XMLSchema.xsd">
+
+<!-- Országok listája, azonosítóval és kóddal -->
+<orszagok>
+    <orszag orszag_id="1">
+        <nev>Magyarország</nev>
+        <kod>HUN</kod>
+    </orszag>
+    <orszag orszag_id="2">
+        <nev>Németország</nev>
+        <kod>GER</kod>
+    </orszag>
+    <orszag orszag_id="3">
+        <nev>Anglia</nev>
+        <kod>ENG</kod>
+    </orszag>
+</orszagok>
+
+<!-- Felszerelések, minden játékoshoz hozzárendelve felszereles_id alapján -->
+<felszerelesek>
+    <felszereles felszereles_id="1">
+        <marka>Winmau</marka>
+        <modell>Blade 6</modell>
+        <suly>23</suly>
+    </felszereles>
+    <felszereles felszereles_id="2">
+        <marka>Target</marka>
+        <modell>Phil Taylor</modell>
+        <suly>24</suly>
+    </felszereles>
+    <felszereles felszereles_id="3">
+        <marka>Unicorn</marka>
+        <modell>Silverstar</modell>
+        <suly>21</suly>
+    </felszereles>
+</felszerelesek>
+
+<!-- Játékosok, kapcsolódnak országhoz és felszereléshez -->
+<jatekosok>
+    <jatekos jatekos_id="1" orszag_id="3" felszereles_id="1">
+        <nev>
+            <vezeteknev>John</vezeteknev>
+            <keresztnev>Smith</keresztnev>
+            <becenev>Bully Boy</becenev>
+        </nev>
+        <nemzetiseg>Brit</nemzetiseg>
+        <szuletesi_datum>1985-04-12</szuletesi_datum>
+        <aktualis_helyezes>5</aktualis_helyezes>
+    </jatekos>
+    <jatekos jatekos_id="2" orszag_id="2" felszereles_id="2">
+        <nev>
+            <vezeteknev>Pietreczko</vezeteknev>
+            <keresztnev>Ricardo</keresztnev>
+            <becenev>Pikachu</becenev>
+        </nev>
+        <nemzetiseg>Német</nemzetiseg>
+        <szuletesi_datum>1990-11-23</szuletesi_datum>
+        <aktualis_helyezes>12</aktualis_helyezes>
+    </jatekos>
+    <jatekos jatekos_id="3" orszag_id="1" felszereles_id="3">
+        <nev>
+            <vezeteknev>Nagy</vezeteknev>
+            <keresztnev>Gábor</keresztnev>
+            <becenev>Gabo</becenev>
+        </nev>
+        <nemzetiseg>Magyar</nemzetiseg>
+        <szuletesi_datum>1988-07-30</szuletesi_datum>
+        <aktualis_helyezes>8</aktualis_helyezes>
+    </jatekos>
+</jatekosok>
+
+<!-- Versenyek, dátummal és kapcsolattartó email címmel -->
+<versenyek>
+    <verseny verseny_id="1">
+        <nev>World Darts Championship</nev>
+        <helyszin>London, Anglia</helyszin>
+        <datum>2025-12-15</datum>
+        <email>info@worlddartschampionship.com</email>
+    </verseny>
+    <verseny verseny_id="2">
+        <nev>German Open</nev>
+        <helyszin>Berlin, Németország</helyszin>
+        <datum>2025-06-20</datum>
+        <email>contact@germanopen.eu</email>
+    </verseny>
+    <verseny verseny_id="3">
+        <nev>Hungarian Masters</nev>
+        <helyszin>Budapest, Magyarország</helyszin>
+        <datum>2025-09-10</datum>
+        <email>info@hungarianmasterts.hu</email>
+    </verseny>
+</versenyek>
+
+<!-- Mérkőzések, két játékos között -->
+<merkozesek>
+    <merkozes merkozes_id="1">
+        <datum>2025-12-15</datum>
+        <legjobb_leg>9</legjobb_leg>
+        <jatekosA>1</jatekosA>
+        <jatekosB>2</jatekosB>
+    </merkozes>
+    <merkozes merkozes_id="2">
+        <datum>2025-06-20</datum>
+        <legjobb_leg>10</legjobb_leg>
+        <jatekosA>2</jatekosA>
+        <jatekosB>3</jatekosB>
+    </merkozes>
+    <merkozes merkozes_id="3">
+        <datum>2025-09-10</datum>
+        <legjobb_leg>11</legjobb_leg>
+        <jatekosA>1</jatekosA>
+        <jatekosB>3</jatekosB>
+    </merkozes>
+</merkozesek>
+
+<!-- Kapcsolat: melyik verseny tartalmazza melyik mérkőzést -->
+<tartalmak>
+    <tartalmaz verseny_id="1" merkozes_id="1"/>
+    <tartalmaz verseny_id="2" merkozes_id="2"/>
+    <tartalmaz verseny_id="3" merkozes_id="3"/>
+</tartalmak>
+
+<!-- Kapcsolat: melyik játékos vett részt melyik versenyen -->
+<resztvettek>
+    <resztvesz verseny_id="1" jatekos_id="1"/>
+    <resztvesz verseny_id="1" jatekos_id="2"/>
+    <resztvesz verseny_id="2" jatekos_id="2"/>
+    <resztvesz verseny_id="2" jatekos_id="3"/>
+    <resztvesz verseny_id="3" jatekos_id="1"/>
+    <resztvesz verseny_id="3" jatekos_id="3"/>
+</resztvettek>
+
+<!-- Kapcsolat: melyik játékos játszott melyik mérkőzésen -->
+<jatszottak>
+    <jatszott merkozes_id="1" jatekos_id="1"/>
+    <jatszott merkozes_id="1" jatekos_id="2"/>
+    <jatszott merkozes_id="2" jatekos_id="2"/>
+    <jatszott merkozes_id="2" jatekos_id="3"/>
+    <jatszott merkozes_id="3" jatekos_id="1"/>
+    <jatszott merkozes_id="3" jatekos_id="3"/>
+</jatszottak>
+
+</darts>
