@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.box {
+    width: 50rem;
+    padding: 0.5rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.box-search {
+    padding: 0.5rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 100px;
+    padding-top: 1px;
+}
+
+select,
+button {
+    margin: 5px;
+    padding: 5px;
+}
+
+input {
+    width: 15rem;
+    padding: 0.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+.actions button {
+    margin-right: 5px;
+}
+
+.mentes {
+    background-color: #4CAF50;
+    color: white;
+    width: 5rem;
+    padding: 0.5rem;
+    border: 1px solid white;
+}
+
+.export {
+    background-color: blue;
+    color: white;
+    width: 7rem;
+    padding: 0.5rem;
+    border: 1px solid white;
+}
+
+.modify {
+    background-color: cyan;
+    color: white;
+    width: 5rem;
+    padding: 0.5rem;
+    border: 1px solid white;
+}
+
+.delete {
+    background-color: #f44336;
+    color: white;
+    width: 5rem;
+    padding: 0.5rem;
+    border: 1px solid white;
+}
