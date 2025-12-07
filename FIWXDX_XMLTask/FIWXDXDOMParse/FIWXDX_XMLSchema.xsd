@@ -2,148 +2,205 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
 
-  <!-- Gyökérelem -->
-  <xs:element name="darts">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="orszagok" type="orszagokType"/>
-        <xs:element name="felszerelesek" type="felszerelesekType"/>
-        <xs:element name="jatekosok" type="jatekosokType"/>
-        <xs:element name="versenyek" type="versenyekType"/>
-        <xs:element name="merkozesek" type="merkozesekType"/>
-        <xs:element name="tartalmak" type="tartalmakType"/>
-        <xs:element name="resztvettek" type="resztvettekType"/>
-        <xs:element name="jatszottak" type="jatszottakType"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <!-- Országok -->
-  <xs:complexType name="orszagokType">
-    <xs:sequence>
-      <xs:element name="orszag" maxOccurs="unbounded">
+    <xs:element name="darts">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element name="nev" type="xs:string"/>
-            <xs:element name="kod" type="xs:string"/>
-          </xs:sequence>
-          <xs:attribute name="orszag_id" type="xs:integer" use="required"/>
+            <xs:sequence>
+                <xs:element name="orszagok" type="orszagokType"/>
+                <xs:element name="felszerelesek" type="felszerelesekType"/>
+                <xs:element name="jatekosok" type="jatekosokType"/>
+                <xs:element name="versenyek" type="versenyekType"/>
+                <xs:element name="merkozesek" type="merkozesekType"/>
+                <xs:element name="tartalmak" type="tartalmakType"/>
+                <xs:element name="resztvettek" type="resztvettekType"/>
+                <xs:element name="jatszottak" type="jatszottakType"/>
+            </xs:sequence>
         </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
 
-  <!-- Felszerelések -->
-  <xs:complexType name="felszerelesekType">
-    <xs:sequence>
-      <xs:element name="felszereles" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="marka" type="xs:string"/>
-            <xs:element name="modell" type="xs:string"/>
-            <xs:element name="suly" type="xs:integer"/>
-          </xs:sequence>
-          <xs:attribute name="felszereles_id" type="xs:integer" use="required"/>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
+        <xs:key name="orszagPK">
+            <xs:selector xpath="orszagok/orszag"/>
+            <xs:field xpath="@orszag_id"/>
+        </xs:key>
 
-  <!-- Játékosok -->
-  <xs:complexType name="jatekosokType">
-    <xs:sequence>
-      <xs:element name="jatekos" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="nev">
-              <xs:complexType>
-                <xs:sequence>
-                  <xs:element name="vezeteknev" type="xs:string"/>
-                  <xs:element name="keresztnev" type="xs:string"/>
-                  <xs:element name="becenev" type="xs:string" minOccurs="0"/>
-                </xs:sequence>
-              </xs:complexType>
+        <xs:key name="felszerelesPK">
+            <xs:selector xpath="felszerelesek/felszereles"/>
+            <xs:field xpath="@felszereles_id"/>
+        </xs:key>
+
+        <xs:key name="jatekosPK">
+            <xs:selector xpath="jatekosok/jatekos"/>
+            <xs:field xpath="@jatekos_id"/>
+        </xs:key>
+
+        <xs:key name="versenyPK">
+            <xs:selector xpath="versenyek/verseny"/>
+            <xs:field xpath="@verseny_id"/>
+        </xs:key>
+
+        <xs:key name="merkozesPK">
+            <xs:selector xpath="merkozesek/merkozes"/>
+            <xs:field xpath="@merkozes_id"/>
+        </xs:key>
+
+        <xs:keyref name="jatekosOrszagFK" refer="orszagPK">
+            <xs:selector xpath="jatekosok/jatekos"/>
+            <xs:field xpath="@orszag_id"/>
+        </xs:keyref>
+
+        <xs:keyref name="jatekosFelszerelesFK" refer="felszerelesPK">
+            <xs:selector xpath="jatekosok/jatekos"/>
+            <xs:field xpath="@felszereles_id"/>
+        </xs:keyref>
+
+        <xs:keyref name="tartalmazVersenyFK" refer="versenyPK">
+            <xs:selector xpath="tartalmak/tartalmaz"/>
+            <xs:field xpath="@verseny_id"/>
+        </xs:keyref>
+
+        <xs:keyref name="tartalmazMerkozesFK" refer="merkozesPK">
+            <xs:selector xpath="tartalmak/tartalmaz"/>
+            <xs:field xpath="@merkozes_id"/>
+        </xs:keyref>
+
+        <xs:keyref name="resztveszVersenyFK" refer="versenyPK">
+            <xs:selector xpath="resztvettek/resztvesz"/>
+            <xs:field xpath="@verseny_id"/>
+        </xs:keyref>
+
+        <xs:keyref name="resztveszJatekosFK" refer="jatekosPK">
+            <xs:selector xpath="resztvettek/resztvesz"/>
+            <xs:field xpath="@jatekos_id"/>
+        </xs:keyref>
+
+        <xs:keyref name="jatszottMerkozesFK" refer="merkozesPK">
+            <xs:selector xpath="jatszottak/jatszott"/>
+            <xs:field xpath="@merkozes_id"/>
+        </xs:keyref>
+
+        <xs:keyref name="jatszottJatekosFK" refer="jatekosPK">
+            <xs:selector xpath="jatszottak/jatszott"/>
+            <xs:field xpath="@jatekos_id"/>
+        </xs:keyref>
+
+    </xs:element>
+
+    <xs:complexType name="orszagokType">
+        <xs:sequence>
+            <xs:element name="orszag" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nev" type="xs:string"/>
+                        <xs:element name="kod" type="xs:string"/>
+                    </xs:sequence>
+                    <xs:attribute name="orszag_id" type="xs:integer" use="required"/>
+                </xs:complexType>
             </xs:element>
-            <xs:element name="nemzetiseg" type="xs:string"/>
-            <xs:element name="szuletesi_datum" type="xs:date"/>
-            <xs:element name="aktualis_helyezes" type="xs:integer"/>
-          </xs:sequence>
-          <xs:attribute name="jatekos_id" type="xs:integer" use="required"/>
-          <xs:attribute name="orszag_id" type="xs:integer" use="required"/>
-          <xs:attribute name="felszereles_id" type="xs:integer" use="required"/>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
+        </xs:sequence>
+    </xs:complexType>
 
-  <!-- Versenyek -->
-  <xs:complexType name="versenyekType">
-    <xs:sequence>
-      <xs:element name="verseny" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="nev" type="xs:string"/>
-            <xs:element name="helyszin" type="xs:string"/>
-            <xs:element name="datum" type="xs:date"/>
-            <xs:element name="email" type="xs:string"/>
-          </xs:sequence>
-          <xs:attribute name="verseny_id" type="xs:integer" use="required"/>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="felszerelesekType">
+        <xs:sequence>
+            <xs:element name="felszereles" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="marka" type="xs:string"/>
+                        <xs:element name="modell" type="xs:string"/>
+                        <xs:element name="suly" type="xs:integer"/>
+                    </xs:sequence>
+                    <xs:attribute name="felszereles_id" type="xs:integer" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
 
-  <!-- Mérkőzések -->
-  <xs:complexType name="merkozesekType">
-    <xs:sequence>
-      <xs:element name="merkozes" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="datum" type="xs:date"/>
-            <xs:element name="legjobb_leg" type="xs:integer"/>
-            <xs:element name="jatekosA" type="xs:integer"/>
-            <xs:element name="jatekosB" type="xs:integer"/>
-          </xs:sequence>
-          <xs:attribute name="merkozes_id" type="xs:integer" use="required"/>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="jatekosokType">
+        <xs:sequence>
+            <xs:element name="jatekos" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nev">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="vezeteknev" type="xs:string"/>
+                                    <xs:element name="keresztnev" type="xs:string"/>
+                                    <xs:element name="becenev" type="xs:string" minOccurs="0"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="nemzetiseg" type="xs:string"/>
+                        <xs:element name="szuletesi_datum" type="xs:date"/>
+                        <xs:element name="aktualis_helyezes" type="xs:integer"/>
+                    </xs:sequence>
+                    <xs:attribute name="jatekos_id" type="xs:integer" use="required"/>
+                    <xs:attribute name="orszag_id" type="xs:integer" use="required"/>
+                    <xs:attribute name="felszereles_id" type="xs:integer" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
 
-  <!-- Tartalmaz -->
-  <xs:complexType name="tartalmakType">
-    <xs:sequence>
-      <xs:element name="tartalmaz" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:attribute name="verseny_id" type="xs:integer" use="required"/>
-          <xs:attribute name="merkozes_id" type="xs:integer" use="required"/>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="versenyekType">
+        <xs:sequence>
+            <xs:element name="verseny" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nev" type="xs:string"/>
+                        <xs:element name="helyszin" type="xs:string"/>
+                        <xs:element name="datum" type="xs:date"/>
+                        <xs:element name="email" type="xs:string"/>
+                    </xs:sequence>
+                    <xs:attribute name="verseny_id" type="xs:integer" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
 
-  <!-- Részt vett -->
-  <xs:complexType name="resztvettekType">
-    <xs:sequence>
-      <xs:element name="resztvesz" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:attribute name="verseny_id" type="xs:integer" use="required"/>
-          <xs:attribute name="jatekos_id" type="xs:integer" use="required"/>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="merkozesekType">
+        <xs:sequence>
+            <xs:element name="merkozes" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="datum" type="xs:date"/>
+                        <xs:element name="legjobb_leg" type="xs:integer"/>
+                        <xs:element name="jatekosA" type="xs:integer"/>
+                        <xs:element name="jatekosB" type="xs:integer"/>
+                    </xs:sequence>
+                    <xs:attribute name="merkozes_id" type="xs:integer" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
 
-  <!-- Játszott -->
-  <xs:complexType name="jatszottakType">
-    <xs:sequence>
-      <xs:element name="jatszott" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:attribute name="merkozes_id" type="xs:integer" use="required"/>
-          <xs:attribute name="jatekos_id" type="xs:integer" use="required"/>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="tartalmakType">
+        <xs:sequence>
+            <xs:element name="tartalmaz" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="verseny_id" type="xs:integer" use="required"/>
+                    <xs:attribute name="merkozes_id" type="xs:integer" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resztvettekType">
+        <xs:sequence>
+            <xs:element name="resztvesz" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="verseny_id" type="xs:integer" use="required"/>
+                    <xs:attribute name="jatekos_id" type="xs:integer" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="jatszottakType">
+        <xs:sequence>
+            <xs:element name="jatszott" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="merkozes_id" type="xs:integer" use="required"/>
+                    <xs:attribute name="jatekos_id" type="xs:integer" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
 
 </xs:schema>
